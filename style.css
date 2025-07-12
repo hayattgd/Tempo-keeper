@@ -1,0 +1,55 @@
+html, body {
+	margin: 0px;
+	padding: 0px;
+}
+
+a#score {
+	padding: 0px;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	width: 100vw;
+}
+
+button {
+	border-radius: 100%;
+	border-style: solid;
+	border-color: darkgray;
+	font-size: 1.5rem;
+	color: black;
+	background-color: white;
+	width: 10rem;
+	height: 10rem;
+	margin: 5px;
+}
+
+button:active {
+	border-width: 0px;
+	border-color: #00000000;
+	color: rgb(32, 32, 32);
+	background-color: rgb(221, 221, 221);
+}
+
+.metronome-container {
+	position: relative;
+	width: 10rem;
+	height: 10rem;
+	margin: 20px;
+}
+
+#stick {
+	border-radius: 16px;
+	width: 4px;
+	height: 10rem;
+	background-color: gray;
+
+	position: absolute;
+	left: 50%;
+
+	transform-origin: bottom center;
+}
