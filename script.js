@@ -1,7 +1,7 @@
 const bpmtext = document.querySelector("h2");
 const button = document.querySelector("button");
 const stick = document.getElementById("stick");
-const scoretext = document.getElementById("score");
+const accuracytext = document.getElementById("accuracy");
 // const ms = document.getElementById("ms");
 
 const audioCtx = new AudioContext();
@@ -60,8 +60,8 @@ function beat()
 	if (now - silencefrom > 0 && now - (silencefrom + 5000) < 0)
 	{
 		//Silence mode
-		scoretext.style.transition = "0.5s";
-		scoretext.style.color = "gray";
+		accuracytext.style.transition = "0.5s";
+		accuracytext.style.color = "gray";
 
 		document.querySelector("body").style.transition = "0.5  s";
 		document.querySelector("body").style.backgroundColor = "gray";
@@ -73,7 +73,7 @@ function beat()
 	}
 	else
 	{
-		scoretext.style.color = "";
+		accuracytext.style.color = "";
 		document.querySelector("body").style.backgroundColor = "";
 		//Play sound
 		const osc = audioCtx.createOscillator();
@@ -125,14 +125,14 @@ function action()
 			totalaccuracy += accuracy;
 			accuracycount += 1;
 
-			scoretext.innerHTML = `${((totalaccuracy / accuracycount * 100 - 50) * 2).toFixed(1)}%`;
+			accuracytext.innerHTML = `${((totalaccuracy / accuracycount * 100 - 50) * 2).toFixed(1)}%`;
 		}
 		// scoretext.innerHTML = 1 - Math.abs(diff) / (msinterval / 2);
 	}
 	else
 	{
 		isStarted = true;
-		scoretext.innerHTML = "100.0%";
+		accuracytext.innerHTML = "100.0%";
 
 		const MAX_BPM = 160;
 		const MIN_BPM = 60;
